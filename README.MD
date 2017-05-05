@@ -3,7 +3,7 @@
 ## Sobre o desafio
 O desafio é bem simples, vamos disponibilizar 2 endpoints, um de Eventos e outro de Hotéis, com esses endpoints você deve criar uma aplicação, simples assim.
 
-Não vamos avaliar a sua capacidade como designer, então não precisa se preocupar em implementar um layout muito elaborado, mas, vamos avaliar as suas noções de UX.
+Não vamos avaliar a sua capacidade como designer, então, não precisa se preocupar em implementar um layout muito elaborado, mas, vamos avaliar as suas noções de UX.
 
 Eu, como usuário, quero.
 1.  Escolher um evento;
