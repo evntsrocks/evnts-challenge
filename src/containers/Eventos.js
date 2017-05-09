@@ -33,8 +33,6 @@ class Eventos extends Component {
     sessionStorage.setItem('event', JSON.stringify(evento));
 
     this.context.router.history.push('/hoteis');
-
-    console.log(sessionStorage);
   }
 
   render() {
