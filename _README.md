@@ -7,7 +7,7 @@ Não vamos avaliar a sua capacidade como designer, então, não precisa se preoc
 
 Eu, como usuário, quero.
 1.  Escolher um evento;
-2.  Ver os hotéis disponíveis e escolher um hotel; 
+2.  Ver os hotéis disponíveis e escolher um hotel;
 3.  Ver os quartos disponíveis e escolher um quarto;
 4.  Solicitar a minha reserva com um form básico (Nome, telefone, email, etc...)
 
@@ -17,9 +17,9 @@ Request:
 
 ```GET http://eng.evnts.rocks/events```
 
-Body: 
+Body:
 
-```JSON 
+```JSON
 {
     "id": "1",
     "name": "Hold the door",
@@ -36,9 +36,9 @@ Request:
 
 ```GET http://eng.evnts.rocks/hotels```
 
-Body: 
+Body:
 
-```JSON 
+```JSON
  {
     "id": "1",
     "name": "Wall Deluxe Hotel",
@@ -89,5 +89,3 @@ Body:
 -   Organização do projeto;
 -   Requisitos solicitados;
 -   Manutenibilidade.
-
-

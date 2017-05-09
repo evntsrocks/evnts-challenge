@@ -1,0 +1,26 @@
+a { color: #762123; }
+
+a:hover,
+a:focus {
+  color: #621b1d;
+  text-decoration: underline;
+}
+
+a:active { color: #56181a; }
+
+.button.is-primary {
+  background-color: #762123;
+}
+
+.button.is-primary:hover,
+.button.is-primary:focus {
+  background-color: #621b1d;
+  text-decoration: none;
+}
+
+.button.is-primary:active {
+  background-color: #56181a;
+}
+
+.input:focus,
+.input:active { border-color: #762123; }
