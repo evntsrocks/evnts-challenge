@@ -1,0 +1,31 @@
+.list-rooms li {
+  display: inline-block;
+  text-align: center;
+}
+
+.list-rooms button {
+  padding: .625rem;
+  font-style: italic;
+  font-size: .7rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.list-rooms img,
+.list-rooms strong {
+  display: block;
+  margin-bottom: .5em;
+  font-size: .8125rem;
+}
+
+.list-rooms img {
+  opacity: .9;
+  transition: opacity .2s;
+}
+
+.list-rooms button:hover,
+.list-rooms button:focus { background-color: #f5f5f5; }
+
+.list-rooms button:hover img,
+.list-rooms button:focus img { opacity: 1; }
