@@ -1,0 +1,30 @@
+.content .rating-stars {
+  margin: 0;
+  list-style: none;
+}
+
+.rating-stars li {
+  color: #a9a9a9;
+
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: top;
+}
+
+.rating-stars li + li {
+  margin-top: 0;
+  margin-left: .25em;
+}
+
+.rating-stars li:before {
+  height: 1em;
+  width: 1em;
+  line-height: 1;
+  content: '\2605';
+}
+
+.rating-stars .is-active {
+  color: #ffdd57;
+  font-weight: bold;
+}
