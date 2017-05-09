@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListHoteis = ({hoteis}) => (
+const ListHoteis = ({hoteis, chooseHotel}) => (
   <ul className="columns is-multiline">
     {hoteis.map(hotel => (
       <li
@@ -22,6 +22,14 @@ const ListHoteis = ({hoteis}) => (
               {quarto.beds}
             </div>
           ))}<br />
+
+
+          <button
+            onClick={() => chooseHotel(hotel)}
+            className="button is-primary is-fullwidth"
+            type="button">
+              Fazer reserva &rarr;
+          </button>
       </li>
     ))}
   </ul>
@@ -43,7 +51,8 @@ ListHoteis.propTypes = {
       price: PropTypes.string.isRequired,
       beds: PropTypes.arrayOf(PropTypes.string)
     }))
-  })).isRequired
+  })).isRequired,
+  chooseHotel: PropTypes.func.isRequired
 }
 
 export default ListHoteis;

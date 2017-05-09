@@ -10,6 +10,8 @@ class Hoteis extends Component {
   constructor() {
     super();
 
+    this.chooseHotel = this.chooseHotel.bind(this);
+
     this.state = {
       isLoading: true,
       hoteis: []
@@ -26,6 +28,12 @@ class Hoteis extends Component {
       );
   }
 
+  chooseHotel(hotel) {
+    sessionStorage.setItem('hotel', JSON.stringify(hotel));
+
+    this.context.router.history.push('/reserva');
+  }
+
   render() {
     const {hoteis, isLoading} = this.state;
 
@@ -35,7 +43,7 @@ class Hoteis extends Component {
         subtitle="Os melhores hoteis próximo ao seu evento">
           { isLoading
           ? <Loading />
-          : <ListHoteis hoteis={hoteis} /> }
+          : <ListHoteis hoteis={hoteis} chooseHotel={this.chooseHotel} /> }
       </Section>
     )
   }
