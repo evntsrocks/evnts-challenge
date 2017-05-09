@@ -1,0 +1,19 @@
+.content .list-amenities {
+  margin: 0;
+  list-style: none;
+}
+
+.list-amenities li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.list-amenities li + li {
+  margin-top: 0;
+  margin-left: .5em;
+}
+
+.list-amenities img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
