@@ -1,35 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import RatingStars from './RatingStars';
+import ListAmenities from './ListAmenities';
+import ListRooms from './ListRooms';
+
+import './ListHoteis.css';
+
 const ListHoteis = ({hoteis, chooseHotel}) => (
-  <ul className="columns is-multiline">
+  <ul className="list-hoteis">
     {hoteis.map(hotel => (
       <li
         key={hotel.id}
-        className="column is-4">
-          <img src={hotel.image} alt=""/>
-
-          nome: {hotel.name}<br />
-          local: {hotel.location}<br />
-          stars: {hotel.stars}<br />
-          distancia: {hotel.distanceToEvent}<br />
-          descricao: {hotel.description}<br />
-          coisas: {hotel.amenities}<br />
-          quartos: {hotel.rooms.map(quarto => (
-            <div key={quarto.id}>
-              {quarto.name}<br />
-              {quarto.price}<br />
-              {quarto.beds}
-              <button
-                onClick={() => chooseHotel(hotel, quarto)}
-                className="button is-primary"
-                type="button">
-                  Reservar quarto &rarr;
-              </button>
+        className="box">
+          <div className="media">
+            <div className="media-left">
+              <figure className="image is-128x128">
+                <img src={hotel.image} alt=""/>
+              </figure>
             </div>
-          ))}<br />
 
+            <div className="media-content">
+              <div className="content is-small">
+                <h3 className="title">
+                  {hotel.name} <small>({hotel.location})</small>
+                </h3>
 
+                <div className="subtitle">
+                  <RatingStars stars={hotel.stars} />
+                </div>
+
+                <p>{hotel.description}</p>
+
+                <ListAmenities amenities={hotel.amenities} />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <strong>Quartos disponíveis</strong>
+
+            <ListRooms rooms={hotel.rooms} hotel={hotel} chooseHotel={chooseHotel} />
+          </div>
       </li>
     ))}
   </ul>
