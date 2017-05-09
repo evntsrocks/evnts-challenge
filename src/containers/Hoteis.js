@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Section from '../components/Section';
 import ListHoteis from '../components/ListHoteis';
@@ -28,8 +29,9 @@ class Hoteis extends Component {
       );
   }
 
-  chooseHotel(hotel) {
+  chooseHotel(hotel, room) {
     sessionStorage.setItem('hotel', JSON.stringify(hotel));
+    sessionStorage.setItem('room', JSON.stringify(room));
 
     this.context.router.history.push('/reserva');
   }
@@ -47,6 +49,10 @@ class Hoteis extends Component {
       </Section>
     )
   }
+}
+
+Hoteis.contextTypes = {
+  router: PropTypes.object
 }
 
 export default Hoteis;
