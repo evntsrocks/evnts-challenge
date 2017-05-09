@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ListAmenities.css';
 
@@ -27,5 +28,9 @@ const ListAmenities = ({amenities}) => (
     })}
   </ul>
 )
+
+ListAmenities.propTypes = {
+  amenities: PropTypes.arrayOf(PropTypes.string)
+}
 
 export default ListAmenities;
