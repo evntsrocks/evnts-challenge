@@ -20,16 +20,16 @@ const ListHoteis = ({hoteis, chooseHotel}) => (
               {quarto.name}<br />
               {quarto.price}<br />
               {quarto.beds}
+              <button
+                onClick={() => chooseHotel(hotel, quarto)}
+                className="button is-primary"
+                type="button">
+                  Reservar quarto &rarr;
+              </button>
             </div>
           ))}<br />
 
 
-          <button
-            onClick={() => chooseHotel(hotel)}
-            className="button is-primary is-fullwidth"
-            type="button">
-              Fazer reserva &rarr;
-          </button>
       </li>
     ))}
   </ul>
