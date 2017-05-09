@@ -1,28 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Card from './Card';
-
 const ListHoteis = ({hoteis}) => (
   <ul className="columns is-multiline">
     {hoteis.map(hotel => (
       <li
         key={hotel.id}
         className="column is-4">
-        <Card
-          image={hotel.image}
-          buttonUrl="/reserva"
-          buttonText="Reservar um quarto">
-          <h3 className="title is-4">{hotel.name}</h3>
+          <img src={hotel.image} alt=""/>
 
-          <p className="subtitle is-6">
-            {hotel.location}
-          </p>
-
-          {hotel.stars} / {hotel.distanceToEvent}
-
-          <p>{hotel.description}</p>
-        </Card>
+          nome: {hotel.name}<br />
+          local: {hotel.location}<br />
+          stars: {hotel.stars}<br />
+          distancia: {hotel.distanceToEvent}<br />
+          descricao: {hotel.description}<br />
+          coisas: {hotel.amenities}<br />
+          quartos: {hotel.rooms.map(quarto => (
+            <div key={quarto.id}>
+              {quarto.name}<br />
+              {quarto.price}<br />
+              {quarto.beds}
+            </div>
+          ))}<br />
       </li>
     ))}
   </ul>
@@ -38,7 +37,7 @@ ListHoteis.propTypes = {
     distanceToEvent: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     amenities: PropTypes.arrayOf(PropTypes.string),
-    beds: PropTypes.arrayOf(PropTypes.shape({
+    rooms: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
