@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Section from '../components/Section';
 import ListEventos from '../components/ListEventos';
@@ -9,6 +10,8 @@ import EventosService from '../services/eventos';
 class Eventos extends Component {
   constructor() {
     super();
+
+    this.chooseEvent = this.chooseEvent.bind(this);
 
     this.state = {
       isLoading: true,
@@ -26,6 +29,14 @@ class Eventos extends Component {
       );
   }
 
+  chooseEvent(evento) {
+    sessionStorage.setItem('event', JSON.stringify(evento));
+
+    this.context.router.history.push('/hoteis');
+
+    console.log(sessionStorage);
+  }
+
   render() {
     const {eventos, isLoading} = this.state;
 
@@ -33,10 +44,14 @@ class Eventos extends Component {
       <Section title="Eventos">
           { isLoading
           ? <Loading />
-          : <ListEventos eventos={eventos} /> }
+          : <ListEventos eventos={eventos} chooseEvent={this.chooseEvent} /> }
       </Section>
     )
   }
+}
+
+Eventos.contextTypes = {
+  router: PropTypes.object
 }
 
 export default Eventos;

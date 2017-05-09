@@ -18,7 +18,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Eventos} />
-            <Route path="/:evento/hoteis" component={Hoteis} />
+            <Route path="/hoteis" component={Hoteis} />
             <Route component={Erro} />
           </Switch>
 

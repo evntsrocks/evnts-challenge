@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const Card = ({image, buttonUrl, buttonText, children}) => (
+const Card = ({image, children}) => (
   <article className="card">
     <div className="card-image">
       <figure className="image is-4by3">
@@ -13,21 +12,11 @@ const Card = ({image, buttonUrl, buttonText, children}) => (
     <div className="card-content content">
       {children}
     </div>
-
-    <footer className="card-footer">
-      <Link
-        to={buttonUrl}
-        className="card-footer-item">
-          {buttonText}
-      </Link>
-    </footer>
   </article>
 );
 
 Card.propTypes = {
   image: PropTypes.string.isRequired,
-  buttonUrl: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
   children: PropTypes.node
 }
 
